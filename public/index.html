@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KRISHUxWP BOT - Best Mini WhatsApp Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/whatsapp.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="bot-icon">🤖</div>
+            <h1>KRISHUxWP BOT</h1>
+            <p class="version">BEST MINI BOT // v2.0</p>
+        </div>
+
+        <!-- Server Status -->
+        <div class="server-status">
+            <div class="status-item">
+                <span class="label">⚡ Server</span>
+                <span class="value">4</span>
+            </div>
+            <div class="status-item">
+                <span class="label">REFRESH</span>
+                <button onclick="location.reload()" class="refresh-btn">⟳</button>
+            </div>
+            <div class="status-item">
+                <span class="label">SYSTEM</span>
+                <span class="value online">ONLINE</span>
+            </div>
+            <div class="status-item">
+                <span class="label">ACTIVE USERS</span>
+                <span class="value" id="activeUsers">5 ONLINE</span>
+            </div>
+            <div class="status-item">
+                <span class="label">SECURITY</span>
+                <span class="value encrypted">ENCRYPTED</span>
+            </div>
+            <div class="status-item">
+                <span class="label">MODE</span>
+                <span class="value">AUTO‑SELECTED</span>
+            </div>
+        </div>
+
+        <!-- Pairing Section -->
+        <div class="pairing-section">
+            <h2>🔗 LINK WHATSAPP DEVICE</h2>
+            <p class="subtitle">Enter your WhatsApp number to get pairing code</p>
+            
+            <div class="input-group">
+                <select id="countryCode" class="country-select">
+                    <option value="91">🇮🇳 +91 (India)</option>
+                    <option value="92">🇵🇰 +92 (Pakistan)</option>
+                    <option value="1">🇺🇸 +1 (USA)</option>
+                    <option value="44">🇬🇧 +44 (UK)</option>
+                    <option value="971">🇦🇪 +971 (UAE)</option>
+                    <option value="966">🇸🇦 +966 (Saudi Arabia)</option>
+                    <option value="880">🇧🇩 +880 (Bangladesh)</option>
+                    <option value="62">🇮🇩 +62 (Indonesia)</option>
+                    <option value="60">🇲🇾 +60 (Malaysia)</option>
+                    <option value="63">🇵🇭 +63 (Philippines)</option>
+                    <option value="234">🇳🇬 +234 (Nigeria)</option>
+                    <option value="27">🇿🇦 +27 (South Africa)</option>
+                    <option value="55">🇧🇷 +55 (Brazil)</option>
+                    <option value="52">🇲🇽 +52 (Mexico)</option>
+                    <option value="33">🇫🇷 +33 (France)</option>
+                    <option value="49">🇩🇪 +49 (Germany)</option>
+                    <option value="39">🇮🇹 +39 (Italy)</option>
+                    <option value="34">🇪🇸 +34 (Spain)</option>
+                    <option value="7">🇷🇺 +7 (Russia)</option>
+                    <option value="86">🇨🇳 +86 (China)</option>
+                    <option value="81">🇯🇵 +81 (Japan)</option>
+                    <option value="82">🇰🇷 +82 (South Korea)</option>
+                    <option value="other">🌍 Other</option>
+                </select>
+                <input type="tel" id="phoneNumber" placeholder="Enter WhatsApp number (e.g., 9876543210)" maxlength="15">
+            </div>
+            
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="agreeCheck">
+                    <span>I agree to link my WhatsApp device with this bot</span>
+                </label>
+            </div>
+
+            <button id="pairBtn" onclick="generatePairCode()" disabled>
+                🔗 GENERATE PAIRING CODE
+            </button>
+
+            <div id="resultBox" class="result-box hidden">
+                <div class="loading-spinner" id="loadingSpinner"></div>
+                <div id="resultContent"></div>
+            </div>
+
+            <div class="note-box">
+                <p>📌 <strong>No OTP required!</strong> Just enter your number and get pairing code</p>
+                <p>✅ Works with <strong>fake + real numbers</strong> both</p>
+                <p>🌍 All countries supported</p>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Commands</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Online</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">🌍</span>
+                <span class="stat-label">All Countries</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">FREE</span>
+                <span class="stat-label">Forever</span>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>❓ FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q: Fake numbers pe chalega?</div>
+                <div class="faq-answer">A: Haan! Fake number + real number dono pe chalega. Bas linked device karna hoga WhatsApp me.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: Koi OTP/code verify karna hoga?</div>
+                <div class="faq-answer">A: Nahi. Direct pairing code se link hota hai. Koi OTP nahi.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 24/7 chalega free?</div>
+                <div class="faq-answer">A: Haan! Render.com free plan 24/7 chalata hai. Bas thoda idle hota hai (cron-job se 14 min me ping karo).</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: Mobile se deploy ho sakta hai?</div>
+                <div class="faq-answer">A: Haan! Pura process mobile browser se ho sakta hai. Koi PC nahi chahiye.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: Termux chahiye?</div>
+                <div class="faq-answer">A: Nahi! Sirf browser se kaam hoga.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: +91/+92 ke alawa其他国家 kaam karega?</div>
+                <div class="faq-answer">A: Haan! Duniya ke kisi bhi country ka number chalega. Bas WhatsApp pe linked device hona chahiye.</div>
+            </div>
+        </div>
+
+        <!-- Commands Preview -->
+        <div class="commands-section">
+            <h2>📋 COMMANDS PREVIEW (500+)</h2>
+            <div class="commands-grid">
+                <div class="cmd-category">
+                    <h3>🤖 AI & Chat</h3>
+                    <p>.ai, .gemini, .gpt, .meta, .bard, .dalle, .translate, .define, .joke, .fact</p>
+                </div>
+                <div class="cmd-category">
+                    <h3>🎵 Downloader</h3>
+                    <p>.ytmp3, .ytmp4, .instagram, .tiktok, .facebook, .twitter, .spotify, .soundcloud</p>
+                </div>
+                <div class="cmd-category">
+                    <h3>🖼️ Converter</h3>
+                    <p>.sticker, .toimg, .togif, .removebg, .enhance, .emoji, .ttp, .attp</p>
+                </div>
+                <div class="cmd-category">
+                    <h3>👥 Group</h3>
+                    <p>.tagall, .hidetag, .promote, .demote, .kick, .add, .antilink, .welcome</p>
+                </div>
+                <div class="cmd-category">
+                    <h3>🎮 Games</h3>
+                    <p>.guess, .hangman, .trivia, .blackjack, .slots, .rps, .tictactoe</p>
+                </div>
+                <div class="cmd-category">
+                    <h3>💰 Economy</h3>
+                    <p>.daily, .work, .mine, .fish, .rob, .shop, .buy, .leaderboard</p>
+                </div>
+                <div class="cmd-category">
+                    <h3>🎨 Extra Fun</h3>
+                    <p>.logo, .neon, .glitch, .carbon, .mock, .wanted, .triggered</p>
+                </div>
+                <div class="cmd-category">
+                    <h3>📖 Islamic</h3>
+                    <p>.quran, .surah, .hadith, .allah99, .namaz, .qibla, .dua</p>
+                </div>
+            </div>
+            <p class="more-commands">...and 500+ more commands! Use <code>.help</code> in WhatsApp to see all</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>KRISHUxWP BOT v2.0 | Made with ❤️ by @krishu672</p>
+        <p>⚡ Powered by Baileys MD | Hosted on Render.com</p>
+        <div class="social-links">
+            <a href="https://github.com/krishu672/KrishuXwpBot" target="_blank">🐙 GitHub</a>
+            <span>|</span>
+            <a href="https://krishuxwpbot-mini-bot.render.app" target="_blank">🌐 Website</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+              </html>
