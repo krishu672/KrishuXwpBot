@@ -1,13 +1,16 @@
 {
   "name": "krishuxwp-bot",
   "version": "2.0.0",
-  "description": "KRISHUxWP BOT - 500+ commands WhatsApp bot",
+  "description": "KRISHUxWP BOT - Real WhatsApp Bot with 8-digit pairing code",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "@whiskeysockets/baileys": "^6.7.9",
+    "pino": "^4.17.0",
+    "qrcode-terminal": "^0.12.0"
   },
   "engines": {
     "node": ">=18.0.0"
