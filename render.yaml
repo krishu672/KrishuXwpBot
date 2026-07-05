@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: krishuxwp-bot
+    runtime: node
+    repo: https://github.com/krishu672/KrishuXwpBot
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: OWNER_NUMBER
+        value: 91xxxxxxxxxx
